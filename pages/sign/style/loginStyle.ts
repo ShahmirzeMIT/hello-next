@@ -37,5 +37,8 @@ export const loginStyle = {
             height:'70%',
             margin:'0 auto',
         }
+    },
+    btnBox:{
+        width:"100%",
     }
 }

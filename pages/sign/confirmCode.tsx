@@ -26,8 +26,6 @@ export default function confirmCode() {
           <FormLayout>
             <Input.OTP formatter={(str) => str.toUpperCase()} {...sharedProps} style={{...confirmCodeStyle.otp}} />
             <br />
-            <br />
-            <br />
             <ReausableButton data={formData.confirm}/>
           </FormLayout>
         </Box>

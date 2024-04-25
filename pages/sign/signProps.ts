@@ -42,6 +42,9 @@ const [formData, setFormData] = useState<FormField>({
     name:'reTypePass',
     label:'Retype Password',
     type:'password'
+  },
+  btn:{
+    size:12,onClick:()=>{},text:"Sign"
   }
   })
   return {formData, setFormData}

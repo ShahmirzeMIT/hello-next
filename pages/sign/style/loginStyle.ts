@@ -1,10 +1,9 @@
-export const signStyle = {
+export const loginStyle = {
     signBody:{
         backgroundColor: "#f2efe8",
         display:'flex',
         flexWrap:'wrap',
         justifyContent:'center',
-        // alignItems:'center',
         height:'100vh',
         padding:'20px'
     },
@@ -28,13 +27,14 @@ export const signStyle = {
         flexDirection:'column',
         // gap:'20px',
         justifyContent:'center',
-        height:"70%",
+        height:"40%",
         borderRadius:'30px',
         boxShadow:" rgba(0, 0, 0, 0.35) 0px 5px 15px",
-        margin:'40px auto',
+        margin:'120px auto',
         '@media (max-width: 830px)': {
             width:'100%',
-            height:'90%'
+            height:'70%',
+            margin:'0 auto',
         }
     }
 }

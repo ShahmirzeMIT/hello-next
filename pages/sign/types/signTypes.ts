@@ -45,6 +45,24 @@ export interface FormField {
     size: number;
     onClick: () => void;
     text: string;
+  },
+  createAccount:{
+    text: string;
+    url: string;
+  },
+  dontHaveAccount:{
+    text: string;
+    url: string;
+  },
+  login:{
+    size: number;
+    onClick: () => void;
+    text: string;
+  },
+  confirm:{
+    size: number;
+    onClick: () => void;
+    text: string;
   }
   }
   

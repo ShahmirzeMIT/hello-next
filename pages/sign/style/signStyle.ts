@@ -16,8 +16,10 @@ export const signStyle = {
     },
     typgraphy:{
       fontWeight:'bold',
+      color:'#091F5B',
       '@media (max-width: 800px)': {
-        fontSize:'5rem'
+        fontSize:'4.5rem',
+      
       }
     },
     formContainer:{
@@ -34,7 +36,8 @@ export const signStyle = {
         margin:'40px auto',
         '@media (max-width: 830px)': {
             width:'100%',
-            height:'90%'
+            height:'85%',
+            margin:'40px auto',
         }
     }
 }

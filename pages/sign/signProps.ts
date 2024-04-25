@@ -45,7 +45,20 @@ const [formData, setFormData] = useState<FormField>({
   },
   btn:{
     size:12,onClick:()=>{},text:"Sign"
-  }
+  },
+  createAccount:{
+    text:'Already have an account',url:'/sign/login'
+  },
+  dontHaveAccount:{
+    text:'Dont have an account',url:'/sign/sign'
+  },
+  login:{
+    size:12,onClick:()=>{},text:"Login"
+  },
+  confirm:{
+    size:12,onClick:()=>{},text:"Confirm"
+  },
+  
   })
   return {formData, setFormData}
 }

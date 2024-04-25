@@ -6,6 +6,7 @@ import InputText from '../reasuable/input/inputText'
 import InputNumber from '../reasuable/input/inputNumber'
 import signChanges from './signChanges'
 import ReausableButton from '../reasuable/button/reausableButton'
+import NavigateLink from '../reasuable/link/navigateLink'
 export default function SignIn() {
 const {formData, setFormData}=signChanges()
   return (
@@ -21,6 +22,7 @@ const {formData, setFormData}=signChanges()
             <InputNumber data={formData.number}/>
             <InputText data={formData.password}/>
             <InputText data={formData.reTypePass}/>
+            <NavigateLink data={formData.createAccount}/>
             <ReausableButton data={formData.btn}/>
           </FormLayout>
         </Box>

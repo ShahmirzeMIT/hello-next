@@ -1,4 +1,4 @@
-export const loginStyle = {
+export const confirmCodeStyle = {
     signBody:{
         backgroundColor: "#f2efe8",
         display:'flex',
@@ -28,7 +28,7 @@ export const loginStyle = {
         flexDirection:'column',
         // gap:'20px',
         justifyContent:'center',
-        height:"40%",
+        height:"30%",
         borderRadius:'30px',
         boxShadow:" rgba(0, 0, 0, 0.35) 0px 5px 15px",
         margin:'120px auto',
@@ -37,5 +37,11 @@ export const loginStyle = {
             height:'70%',
             margin:'0 auto',
         }
+    },
+    otp:{
+
+        width:'95%',
+        margin:'0 auto'
+    
     }
 }

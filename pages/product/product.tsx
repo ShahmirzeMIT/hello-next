@@ -7,7 +7,7 @@ export default function product() {
   return (
       <>
         <FormLayout>
-            <InputText />
+            {/* <InputText /> */}
         </FormLayout>
       </>
     

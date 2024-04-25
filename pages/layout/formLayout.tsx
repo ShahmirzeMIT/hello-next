@@ -4,7 +4,7 @@ import React from 'react'
 export default function FormLayout({children}:React.PropsWithChildren) {
   return (
     <Box sx={{width:"100%"}}>
-        <Grid  container  spacing={2} > 
+        <Grid  container  spacing={2}  sx={{gap:2}}> 
             {children}
         </Grid>
      </Box>

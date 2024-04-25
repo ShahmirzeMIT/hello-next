@@ -24,7 +24,6 @@ const handleClick=()=>{
   
   if (authenticatedUser !== undefined && authenticatedUser) {
     console.log('Authenticated user:', authenticatedUser);
-    // Proceed with authentication
   } else {
     toast.error('Invalid Email or Password');
   }

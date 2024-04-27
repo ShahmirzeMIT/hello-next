@@ -1,6 +1,6 @@
 import "./styles/globals.css";
 import type { AppProps } from "next/app";
-import { AuthContextProvider } from "./utils/AuthContext";
+import { AuthContextProvider } from "../public/utils/AuthContext";
 import { ToastContainer } from "react-toastify";
 import HeaderComp from "./layout/header/header";
 

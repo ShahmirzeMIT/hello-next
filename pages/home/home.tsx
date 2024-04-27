@@ -4,11 +4,11 @@ import HomeLayout from '../layout/homeLayout/HomeLayout'
 import { useRouter } from 'next/router'
 import {homeStyle} from './styles/homeStyle'
 import styles from './styles/homStyle.module.css'
-import SearchInput from '../reasuable/input/searchInput'
-import ReausableButton from '../reasuable/button/reausableButton'
+import SearchInput from '../../public/reasuable/input/searchInput'
+import ReausableButton from '../../public/reasuable/button/reausableButton'
 import homeChanges from './homeChanges'
-import Rent from '../reasuable/rent/Rent'
-import Suggest from '../reasuable/suggest/Suggest'
+import Rent from '../../public/reasuable/rent/Rent'
+import Suggest from '../../public/reasuable/suggest/Suggest'
 export default function Home() {
     const {searchData,setSearchData,btn }=homeChanges()
     const [checkUser, setCheckUser] = useState(false)

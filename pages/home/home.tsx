@@ -31,9 +31,7 @@ export default function Home() {
             <HomeLayout>
                 <Grid item xl={12} lg={12} md={12} sm={12} xs={12} >
                         <Box className={styles.homeBg}>
-                            <Box sx={{
-                                width:"30%",
-                                margin:'50px 150px',}}>
+                            <Box sx={{...homeStyle.homeBg}}>
                                 <SearchInput data={searchData.pick} />
                                 <br />
                                  <SearchInput data={searchData.drop} />

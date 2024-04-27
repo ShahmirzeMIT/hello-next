@@ -1,36 +1,53 @@
-import { Box, Typography } from '@mui/material'
-import React from 'react'
-import { Input} from 'antd';
-import type { GetProp } from 'antd';
+import { Box, Typography } from '@mui/material';
+import React, { useState } from 'react';
 import FormLayout from '../layout/formLayout';
-import {confirmCodeStyle} from './style/confirmCodeStyle'
+import { confirmCodeStyle } from './style/confirmCodeStyle';
 import ReausableButton from '../reasuable/button/reausableButton';
 import signChanges from './signChanges';
-export default function confirmCode() {
-    const {formData, setFormData}=signChanges()
-    const onChange: GetProp<typeof Input.OTP, 'onChange'> = (text) => {
-        console.log('onChange:', text);
-      };
+import OTPInput from 'react-otp-input';
+
+export default function ConfirmCode() {
+    const { formData } = signChanges();
+    const [otp, setOtp] = useState('');
+
+    const handleChange = (otp: string) => {
+      setOtp(otp);
+    };
+console.log(otp);
+
+    const renderInput = (inputProps: React.InputHTMLAttributes<HTMLInputElement>, index: number): React.ReactNode => {
+      return (
+        <input
+          key={index}
+          type="text"
+          {...inputProps}
+          style={{...inputProps.style, ...confirmCodeStyle.otp}} // Merge with your custom styles
+        />
+      );
+    };
     
-      const sharedProps = {
-        onChange,
-      };
-  return (
-    <Box>
-        <Box sx={{...confirmCodeStyle.signBody}}>
-        <Box sx={{...confirmCodeStyle.boxWidth}}><Typography  variant='h1' sx={{
-            ...confirmCodeStyle.typgraphy
-        }}>Let's Write Confirm Code</Typography></Box>
-        <Box sx={{...confirmCodeStyle.boxWidth}}>
-          <Box sx={{...confirmCodeStyle.formContainer}}>
-          <FormLayout>
-            <Input.OTP formatter={(str) => str.toUpperCase()} {...sharedProps} style={{...confirmCodeStyle.otp}} />
-            <br />
-            <ReausableButton data={formData.confirm}/>
-          </FormLayout>
-        </Box>
-        </Box>
-    </Box>
-    </Box>
-  )
+
+    return (
+      <Box>
+          <Box sx={{...confirmCodeStyle.signBody}}>
+          <Box sx={{...confirmCodeStyle.boxWidth}}><Typography  variant='h1' sx={{
+              ...confirmCodeStyle.typgraphy
+          }}>Let's Write Confirm Code</Typography></Box>
+          <Box sx={{...confirmCodeStyle.boxWidth}}>
+            <Box sx={{...confirmCodeStyle.formContainer}}>
+            <FormLayout>
+              <OTPInput
+                  value={otp}
+                  onChange={handleChange}
+                  numInputs={6} // Number of OTP digits
+                  inputStyle={confirmCodeStyle.otp} // Custom input style
+                  renderInput={renderInput}
+                />
+              <ReausableButton data={formData.confirm}/>
+            </FormLayout>
+          </Box>
+          </Box>
+      </Box>
+      </Box>
+    );
 }

@@ -39,9 +39,13 @@ export const confirmCodeStyle = {
         }
     },
     otp:{
-
         width:'95%',
-        margin:'0 auto'
-    
+        margin:'0 auto',
+        border:'none',
+        borderBottom:'1px solid #091F5B',
+        marginLeft:'10px',
+        outline:'none',
+        fontSize:'1.3rem',
+        marginBottom:'10px',
     }
 }

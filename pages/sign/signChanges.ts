@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import signProps from './signProps';
 
 export default function signChanges() {

@@ -1,6 +1,6 @@
 import React from 'react'
 import homeProps from './homeProps'
-import { SearchData } from './types/homePropsTypes';
+import { SearchData } from '../../public/home/types/homePropsTypes';
 
 export default function homeChanges() {
     const inputChnages = (val:{value:string | number| undefined, name:string })=>{

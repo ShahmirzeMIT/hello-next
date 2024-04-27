@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SearchData } from './types/homePropsTypes'
+import { SearchData } from '../../public/home/types/homePropsTypes'
 
 export default function homeProps({inputChnage}:{inputChnage:(val:{value:string | number| undefined, name:string })=>void})  {
     const [searchData, setSearchData] = useState<SearchData>({

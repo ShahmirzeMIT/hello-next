@@ -1,4 +1,4 @@
-import { Box,  Grid } from '@mui/material'
+import { Box,  Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import HomeLayout from '../layout/homeLayout/HomeLayout'
 import { useRouter } from 'next/router'
@@ -7,6 +7,8 @@ import styles from './styles/homStyle.module.css'
 import SearchInput from '../reasuable/input/searchInput'
 import ReausableButton from '../reasuable/button/reausableButton'
 import homeChanges from './homeChanges'
+import Rent from '../reasuable/rent/Rent'
+import Suggest from '../reasuable/suggest/Suggest'
 export default function Home() {
     const {searchData,setSearchData,btn }=homeChanges()
     const [checkUser, setCheckUser] = useState(false)
@@ -40,7 +42,25 @@ export default function Home() {
                                     <ReausableButton data={btn} />
                                 </Box>
                             </Box>
-                               
+                        </Box>
+                        <Box sx={{...homeStyle.rentBox}}>
+                            <Typography variant='h5' sx={{...homeStyle.rentText}}>Lorem ipsum dolor sit amet consectetur <br />adipisicing elit. Impedit, praesentium!</Typography>
+                            <br />
+                            <Box sx={{...homeStyle.rent}}>
+                                <Rent/>
+                                <Rent/>
+                                <Rent/>
+                            </Box>
+                             
+                        </Box>
+
+                        <Box sx={{...homeStyle.suggestBox}}>
+                            <Typography variant='h3' sx={{...homeStyle.suggestText}}>Why Safely</Typography>
+                            <Box sx={{...homeStyle.suggest}}>
+                                <Suggest/>
+                                <Suggest/>
+                                <Suggest/>
+                            </Box>
                         </Box>
                 </Grid>
             </HomeLayout>

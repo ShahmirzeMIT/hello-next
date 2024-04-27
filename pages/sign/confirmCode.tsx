@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import FormLayout from '../layout/formLayout';
 import { confirmCodeStyle } from '../../public/sign/style/confirmCodeStyle';
 import ReausableButton from '../../public/reasuable/button/reausableButton';
-import signChanges from './signChanges';
+import signChanges from '../../public/sign/signChanges';
 import OTPInput from 'react-otp-input';
 
 export default function ConfirmCode() {

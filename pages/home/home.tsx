@@ -6,7 +6,7 @@ import {homeStyle} from '../../public/home/styles/homeStyle'
 import styles from '../../public/home/styles/homStyle.module.css'
 import SearchInput from '../../public/reasuable/input/searchInput'
 import ReausableButton from '../../public/reasuable/button/reausableButton'
-import homeChanges from './homeChanges'
+import homeChanges from '../../public/home/homeChanges'
 import Rent from '../../public/reasuable/rent/Rent'
 import Suggest from '../../public/reasuable/suggest/Suggest'
 export default function Home() {

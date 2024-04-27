@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { loginStyle } from '../../public/sign/style/loginStyle';
 import FormLayout from '../layout/formLayout';
 import InputText from '../../public/reasuable/input/inputText';
-import signChanges from './signChanges';
+import signChanges from '../../public/sign/signChanges';
 import ReausableButton from '../../public/reasuable/button/reausableButton';
 import NavigateLink from '../../public/reasuable/link/navigateLink';
 import authentication from '../../public/authentication.json';

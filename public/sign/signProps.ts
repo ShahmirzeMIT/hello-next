@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FormField, Props } from '../../public/sign/types/signTypes'
+import { FormField, Props } from './types/signTypes'
 
 export default function signProps({inputChnage}:{inputChnage:(val:{value:string | number| undefined, name:string })=>void})  {
 

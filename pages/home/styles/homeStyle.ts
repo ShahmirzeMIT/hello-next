@@ -36,11 +36,14 @@ const homeStyle: HomeStyle = {
         overflow: 'hidden',
         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 80%)',
         animation: `
-            waveAnimation 2s infinite alternate,
-            moveBackground 10s linear infinite
+          waveAnimation 2s infinite alternate,
+           moveBackground 10s linear infinite
         `,
     },
+    '@keyframes waveAnimation': waveAnimation, // Define keyframes using @keyframes syntax
+    '@keyframes moveBackground': moveBackground, // Define keyframes using @keyframes syntax
 };
+
 
 // Add keyframes to the style object
 homeStyle['@keyframes waveAnimation'] = waveAnimation;

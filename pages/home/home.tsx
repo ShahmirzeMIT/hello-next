@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import HomeLayout from '../layout/homeLayout/HomeLayout'
 import { useRouter } from 'next/router'
 import {homeStyle} from './styles/homeStyle'
+import styles from './styles/homStyle.module.css'
 export default function Home() {
     const [checkUser, setCheckUser] = useState(false)
     const router = useRouter()
@@ -25,7 +26,7 @@ export default function Home() {
             checkUser?  (
             <HomeLayout>
                 <Grid item xl={12} lg={12} md={12} sm={12} xs={12} >
-                        <Box sx={{...homeStyle.homeBg}}>
+                        <Box className={styles.homeBg}>
 
                         </Box>
                 </Grid>

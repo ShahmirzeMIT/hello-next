@@ -1,0 +1,31 @@
+@keyframes waveAnimation {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 80%);
+    }
+    50% {
+        clip-path: polygon(0 0%, 100% 0%, 100% 80%, 0% 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 80%);
+    }
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 5% 0;
+    }
+}
+
+.homeBg {
+    background: url(../../../public/assets/shutterstock_2040669293-Shopping_King_Louie_yzmhkq.webp) no-repeat top center/cover;
+    height: 90vh;
+    width: 100%;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* Adjust clip-path to cover the entire background */
+    animation: waveAnimation 4s infinite alternate, moveBackground 20s linear infinite;
+}

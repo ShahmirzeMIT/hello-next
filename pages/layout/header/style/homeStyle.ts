@@ -21,5 +21,8 @@ export const headerStyle = {
         color:'#091F5B',
         fontWeight:'bold',
         fontSize:'12px',
+    },
+    marginBottom:{
+        marginBottom:'100px',
     }
 }

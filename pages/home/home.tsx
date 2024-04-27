@@ -1,8 +1,8 @@
-import { CircularProgress } from '@mui/material'
+import { Box,  Grid } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import HomeLayout from '../layout/homeLayout/HomeLayout'
 import { useRouter } from 'next/router'
-
+import {homeStyle} from './styles/homeStyle'
 export default function Home() {
     const [checkUser, setCheckUser] = useState(false)
     const router = useRouter()
@@ -24,7 +24,11 @@ export default function Home() {
         <>{
             checkUser?  (
             <HomeLayout>
-            <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat laboriosam perspiciatis aspernatur iure sit voluptates, et corporis, blanditiis quae magni assumenda nesciunt, nam perferendis eaque error molestiae? Iure commodi dolorum debitis dolore velit harum in. Blanditiis unde, repudiandae sit vitae sunt saepe dicta corrupti laborum illo fugiat sapiente neque doloremque vero asperiores esse vel fugit? Dolorem quibusdam illo, iure ab ut accusamus doloremque harum deleniti accusantium doloribus temporibus aperiam, dolor aspernatur a? Esse, velit repudiandae a at nostrum consequatur perferendis nisi. Delectus ipsam eius magnam animi aspernatur quibusdam! Hic, ipsa nemo? Sunt asperiores sint, explicabo aliquid consequatur quaerat. Perferendis, optio?</h1>
+                <Grid item xl={12} lg={12} md={12} sm={12} xs={12} >
+                        <Box sx={{...homeStyle.homeBg}}>
+
+                        </Box>
+                </Grid>
             </HomeLayout>
             )
             

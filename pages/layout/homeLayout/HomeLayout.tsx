@@ -4,7 +4,7 @@ import HeaderComp from '../header/header'
 
 export default function HomeLayout({children}:React.PropsWithChildren) {
   return (
-    <Grid sx={{width:"100%"}}  container  spacing={2}  >
+    <Grid sx={{width:"100%"}}  container  >
         <HeaderComp/>
         {children }
     </Grid>

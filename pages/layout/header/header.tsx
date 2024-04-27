@@ -50,7 +50,7 @@ export default function HeaderComp(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ ...headerStyle.marginBottom,display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" sx={{...headerStyle.appBar}}>
         <Toolbar>

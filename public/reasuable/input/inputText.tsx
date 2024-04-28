@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import {inputTextStyle} from './style/inputTextStyle'
 interface Props {
   data:{
-    size: number
+    size?: number
     value: string | undefined
     onChange: (value: {name: string, value: string}) => void
     name: string
@@ -37,7 +37,6 @@ const InputText = ({data}: Props) => {
         <TextField
             value={props.value}
             type={props.type}
-            
             fullWidth
             id="standard-basic" 
             label={props.label}

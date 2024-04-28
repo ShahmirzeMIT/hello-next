@@ -3,7 +3,7 @@ import React from 'react'
 import {buttonStyle} from './style/buttonStyle'
 interface Props {
   data:{
-  size: number
+  size?: number
   onClick: () => void
   text: string
   }

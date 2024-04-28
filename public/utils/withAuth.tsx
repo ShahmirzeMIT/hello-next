@@ -8,13 +8,16 @@ const withAuth = (Component: React.ComponentType<any>) => {
     const { userToken } = useContext(AuthContext);
 
     useEffect(() => {
-      if (!userToken) {
-        router.push('/sign/login'); 
-      }
+      if (typeof window !== 'undefined') {
+        const storedToken = localStorage.getItem('userToken');
+        if (!storedToken) {
+          router.push('/sign/login');
+        }
+      } 
     }, [userToken, router]);
 
     if (!userToken) {
-      return null; 
+      return null;
     }
     return <Component {...props} />;
   };

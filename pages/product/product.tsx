@@ -12,10 +12,7 @@ export default function product() {
       <>
         <FormLayout >
           <Box sx={{background:'white',width:'100%',padding:'20px'}}>
-
-
           </Box>
-       
         </FormLayout>
       </>
     

@@ -26,12 +26,12 @@ export const AuthContext = createContext<{
 export const AuthContextProvider = ({ children }: AuthContextProps) => {
   const [userToken, setUserToken] = useState<User | null>(null);
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("userToken");
-  //   if (token) {
-  //     setUserToken(JSON.parse(token));
-  //   }
-  // },[userToken])
+  useEffect(() => {
+    const token = localStorage.getItem("userToken");
+    if (token) {
+      setUserToken(JSON.parse(token));
+    }
+  },[userToken])
 
   const logout = () => {
     setUserToken(null);

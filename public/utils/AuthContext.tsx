@@ -31,7 +31,7 @@ export const AuthContextProvider = ({ children }: AuthContextProps) => {
     if (token) {
       setUserToken(JSON.parse(token));
     }
-  },[userToken])
+  },[])
 
   const logout = () => {
     setUserToken(null);

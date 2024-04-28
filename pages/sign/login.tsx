@@ -22,13 +22,14 @@ export default function Login() {
       (user) => user.email === formData.email.value && user.password === formData.password.value
     );
 
-    if (authenticatedUser !== undefined && authenticatedUser) {
+    if (authenticatedUser !== undefined && authenticatedUser && authenticatedUser.email!=="") {
       setUserToken(authenticatedUser);
       toast.success('Login Successful');
       router.push('/home/home')
       localStorage.setItem('userToken', JSON.stringify(authenticatedUser));
     } else {
       toast.error('Invalid Email or Password');
+      router.push('/login');
     }
   };
 

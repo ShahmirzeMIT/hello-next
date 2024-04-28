@@ -2,16 +2,14 @@ import { Box } from '@mui/material'
 import React from 'react'
 import {rentRideStyle} from '../../public/pageStyles/rentRideStyle'
 import HomeLayout from '../layout/homeLayout/HomeLayout'
-import { Grid, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import DriverInfo from '@/public/reasuable/driverInfo/DriverInfo'
-import FormLayout from '../layout/formLayout'
 import InputText from '@/public/reasuable/input/inputText'
 import ReausableButton from '@/public/reasuable/button/reausableButton'
 import rentChanges from '@/public/propsChanges/rentRide/rentChanges'
-export default function RentRide() {
+import withAuth from '@/public/utils/withAuth'
+ function RentRide() {
     const {ride,setRide, btn,setBtn}=rentChanges()
-    console.log(ride,'ride');
-    
   return (
     <HomeLayout>
           <Box sx={{...rentRideStyle.firstContainer}}>
@@ -47,3 +45,5 @@ export default function RentRide() {
     
   )
 }
+
+export default withAuth(RentRide);

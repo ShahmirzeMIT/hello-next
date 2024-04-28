@@ -13,21 +13,61 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import {headerStyle} from '../../../public/header/style/homeStyle'
+import { headerStyle } from '../../../public/header/style/homeStyle';
+
 interface Props {
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Rent','Contact'];
+const navItems = [
+  { name: 'Home', url: '/' },
+  {
+    name: 'About',
+    subItems: [
+      { name: 'Our Mission', url: '/about/mission' },
+      { name: 'Team', url: '/about/team' },
+    ],
+  },
+  {
+    name: 'Rent',
+    subItems: [
+      { name: 'Car Rental', url: '/rent/car' },
+      { name: 'Bike Rental', url: '/rent/bike' },
+    ],
+  },
+  { name: 'Contact', url: '/contact' },
+];
 
 export default function HeaderComp(props: Props) {
   const { window } = props;
+  const elementRef = React.useRef(null);
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const [openNestedMenu, setOpenNestedMenu] = React.useState<string | null>(null);
+  const [position, setPosition] = React.useState({x:0, y:0});
+  
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const handleNestedMenuClick = (event: React.MouseEvent<HTMLElement>, name: string) => {
+    const target = event.target as HTMLElement;
+    const rect = target.getBoundingClientRect();
+    const position = { x: rect.x, y: rect.bottom };
+  
+    setOpenNestedMenu((prev) => (prev === name ? null : name));
+    setPosition(position);
+  };
+
+  const container = window !== undefined ? () => window().document.body : undefined;
+
+  const nestedListItem = (subItem: { name: string; url: string }, parentName: string) => (
+    <ListItem key={subItem.name} disablePadding>
+      <ListItemButton onClick={(event) => handleNestedMenuClick(event,parentName)}>
+        <ListItemText primary={subItem.name} />
+      </ListItemButton>
+    </ListItem>
+  );
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -37,22 +77,29 @@ export default function HeaderComp(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+          <React.Fragment key={item.name}>
+            <ListItem disablePadding>
+              <ListItemButton onClick={(event) => handleNestedMenuClick(event,item.name)}>
+                <ListItemText primary={item.name} />
+              </ListItemButton>
+            </ListItem>
+            {item.subItems && openNestedMenu === item.name && (
+              <List sx={{ position: 'absolute', left: position.x, top: position.y }}>
+                {item.subItems.map((subItem) => nestedListItem(subItem, item.name))}
+              </List>
+            )}
+          </React.Fragment>
         ))}
       </List>
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
-
+  console.log(position,'position');
+  
   return (
-    <Box sx={{ ...headerStyle.marginBottom,display: 'flex' }}>
+    <Box sx={{ ...headerStyle.marginBottom, display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{...headerStyle.appBar}}>
+      <AppBar component="nav" sx={{ ...headerStyle.appBar }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -63,19 +110,39 @@ export default function HeaderComp(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{...headerStyle.logoTypgraphy}}
-          >
-           Safely
+          <Typography variant="h6" component="div" sx={{ ...headerStyle.logoTypgraphy }}>
+            Safely
           </Typography>
           <Box sx={{ ...headerStyle.navigateBox }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ ...headerStyle.navbar }}>
-                {item}
-              </Button>
-            ))}
+            <List sx={{ display: 'flex' }}>
+              {navItems.map((item) => (
+                <React.Fragment key={item.name}>
+                  <ListItem disablePadding>
+                    <ListItemButton onClick={(event) => handleNestedMenuClick(event,item.name)}>
+                      <ListItemText primary={item.name} />
+                    </ListItemButton>
+                  </ListItem>
+                  {item.subItems && openNestedMenu === item.name && (
+                    <List
+                        sx={{
+                          position: 'absolute',
+                          left: position.x/12,
+                          top: position.y,
+                          color: 'red',
+                          zIndex: 99,
+                          mt: 1,
+                          py: 0,
+                          '& .MuiListItemButton-root': {
+                            pl: 2,
+                          },
+                        }}
+                      >
+                        {item.subItems.map((subItem) => nestedListItem(subItem, item.name))}
+                      </List>
+                    )}
+                </React.Fragment>
+              ))}
+            </List>
           </Box>
         </Toolbar>
       </AppBar>
@@ -86,9 +153,9 @@ export default function HeaderComp(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, 
+            keepMounted: true,
           }}
-          sx={{...headerStyle.drawer(drawerWidth)}}
+          sx={{ ...headerStyle.drawer(drawerWidth) }}
         >
           {drawer}
         </Drawer>

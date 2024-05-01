@@ -5,6 +5,9 @@ export const confirmedStyle={
         height:'82vh',
         '@media (max-width: 800px)': {
             height:'160vh'
+
+
+            
         }
     }
 }

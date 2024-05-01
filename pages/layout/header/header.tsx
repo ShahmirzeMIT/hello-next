@@ -84,7 +84,7 @@ export default function HeaderComp(props: Props) {
               </ListItemButton>
             </ListItem>
             {item.subItems && openNestedMenu === item.name && (
-              <List sx={{ position: 'absolute', left: position.x, top: position.y }}>
+              <List sx={{ position: 'absolute', left: 60, top: 40 }}>
                 {item.subItems.map((subItem) => nestedListItem(subItem, item.name))}
               </List>
             )}

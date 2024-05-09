@@ -1,9 +1,9 @@
 import { Box, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import FormLayout from '../layout/formLayout';
-import { confirmCodeStyle } from '../../public/sign/style/confirmCodeStyle';
-import ReausableButton from '../../public/reasuable/button/reausableButton';
-import signChanges from '../../public/sign/signChanges';
+import { confirmCodeStyle } from '../../components/sign/style/confirmCodeStyle';
+import ReausableButton from '../../components/reasuable/button/reausableButton';
+import signChanges from '../../components/sign/signChanges';
 import OTPInput from 'react-otp-input';
 
 export default function ConfirmCode() {

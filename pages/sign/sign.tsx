@@ -1,12 +1,12 @@
 import { Box, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import {signStyle} from '../../public/sign/style/signStyle'
+import {signStyle} from '../../components/sign/style/signStyle'
 import FormLayout from '../layout/formLayout'
-import InputText from '../../public/reasuable/input/inputText'
-import InputNumber from '../../public/reasuable/input/inputNumber'
-import signChanges from '../../public/sign/signChanges'
-import ReausableButton from '../../public/reasuable/button/reausableButton'
-import NavigateLink from '../../public/reasuable/link/navigateLink'
+import InputText from '../../components/reasuable/input/inputText'
+import InputNumber from '../../components/reasuable/input/inputNumber'
+import signChanges from '../../components/sign/signChanges'
+import ReausableButton from '../../components/reasuable/button/reausableButton'
+import NavigateLink from '../../components/reasuable/link/navigateLink'
 export default function SignIn() {
 const {formData, setFormData}=signChanges()
   return (

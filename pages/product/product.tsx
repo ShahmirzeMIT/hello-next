@@ -1,5 +1,5 @@
 import React from 'react'
-import InputText from '../../public/reasuable/input/inputText'
+import InputText from '../../components/reasuable/input/inputText'
 import { Box, Grid, Stack } from '@mui/material'
 import FormLayout from '../layout/formLayout'
 import { Typography } from '@mui/material'

@@ -1,13 +1,13 @@
 import { Box, Typography } from '@mui/material';
 import React, { useContext } from 'react';
-import { loginStyle } from '../../public/sign/style/loginStyle';
+import { loginStyle } from '../../components/sign/style/loginStyle';
 import FormLayout from '../layout/formLayout';
-import InputText from '../../public/reasuable/input/inputText';
-import signChanges from '../../public/sign/signChanges';
-import ReausableButton from '../../public/reasuable/button/reausableButton';
-import NavigateLink from '../../public/reasuable/link/navigateLink';
+import InputText from '../../components/reasuable/input/inputText';
+import signChanges from '../../components/sign/signChanges';
+import ReausableButton from '../../components/reasuable/button/reausableButton';
+import NavigateLink from '../../components/reasuable/link/navigateLink';
 import authentication from '../../public/authentication.json';
-import { AuthContext } from '../../public/utils/AuthContext';
+import { AuthContext } from '../../components/utils/AuthContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
@@ -29,7 +29,7 @@ export default function Login() {
       localStorage.setItem('userToken', JSON.stringify(authenticatedUser));
     } else {
       toast.error('Invalid Email or Password');
-      router.push('/login');
+      router.push('/sign/login');
     }
   };
 

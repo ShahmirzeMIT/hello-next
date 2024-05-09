@@ -1,13 +1,13 @@
 import { Box } from '@mui/material'
 import React from 'react'
-import {rentRideStyle} from '../../public/pageStyles/rentRideStyle'
+import {rentRideStyle} from '../../components/pageStyles/rentRideStyle'
 import HomeLayout from '../layout/homeLayout/HomeLayout'
 import { Typography } from '@mui/material'
-import DriverInfo from '@/public/reasuable/driverInfo/DriverInfo'
-import InputText from '@/public/reasuable/input/inputText'
-import ReausableButton from '@/public/reasuable/button/reausableButton'
-import rentChanges from '@/public/propsChanges/rentRide/rentChanges'
-import withAuth from '@/public/utils/withAuth'
+import DriverInfo from '@/components/reasuable/driverInfo/DriverInfo'
+import InputText from '@/components/reasuable/input/inputText'
+import ReausableButton from '@/components/reasuable/button/reausableButton'
+import rentChanges from '@/components/propsChanges/rentRide/rentChanges'
+import withAuth from '@/components/utils/withAuth'
  function RentRide() {
     const {ride,setRide, btn,setBtn}=rentChanges()
   return (

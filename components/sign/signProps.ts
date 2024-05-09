@@ -10,7 +10,6 @@ const [formData, setFormData] = useState<FormField>({
       onChange:inputChnage,
       name:'name',
       label:'Name',
-      
     },
     email:{
       size:12,

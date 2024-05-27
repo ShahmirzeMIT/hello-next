@@ -1,6 +1,6 @@
 import { Box,  Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import HomeLayout from '../layout/homeLayout/HomeLayout'
+import HomeLayout from '../../layout/homeLayout/HomeLayout'
 import { useRouter } from 'next/router'
 import {homeStyle} from '../../components/home/styles/homeStyle'
 import styles from '../../components/home/styles/homStyle.module.css'
@@ -62,6 +62,7 @@ export default function Home() {
                                 <Suggest/>
                             </Box>
                         </Box>
+                        
                 </Grid>
             </HomeLayout>
             )

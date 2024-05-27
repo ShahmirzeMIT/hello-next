@@ -1,7 +1,7 @@
 import React from 'react'
 import InputText from '../../components/reasuable/input/inputText'
 import { Box, Grid, Stack } from '@mui/material'
-import FormLayout from '../layout/formLayout'
+import FormLayout from '../../layout/formLayout'
 import { Typography } from '@mui/material'
 import { Circle } from '@mui/icons-material'
 

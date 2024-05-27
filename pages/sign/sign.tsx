@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import {signStyle} from '../../components/sign/style/signStyle'
-import FormLayout from '../layout/formLayout'
+import FormLayout from '../../layout/formLayout'
 import InputText from '../../components/reasuable/input/inputText'
 import InputNumber from '../../components/reasuable/input/inputNumber'
 import signChanges from '../../components/sign/signChanges'

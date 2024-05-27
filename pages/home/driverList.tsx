@@ -2,7 +2,7 @@ import DriverInfo from '@/components/reasuable/driverInfo/DriverInfo';
 import withAuth from '@/components/utils/withAuth';
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import HomeLayout from '../layout/homeLayout/HomeLayout';
+import HomeLayout from '../../layout/homeLayout/HomeLayout';
 import {driverListyStyle} from '../../components/pageStyles/driverListyStyle'
  function DriverList() {
   return (

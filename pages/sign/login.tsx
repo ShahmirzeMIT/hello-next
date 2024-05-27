@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import React, { useContext } from 'react';
 import { loginStyle } from '../../components/sign/style/loginStyle';
-import FormLayout from '../layout/formLayout';
+import FormLayout from '../../layout/formLayout';
 import InputText from '../../components/reasuable/input/inputText';
 import signChanges from '../../components/sign/signChanges';
 import ReausableButton from '../../components/reasuable/button/reausableButton';

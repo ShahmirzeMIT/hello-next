@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import {footerStyle} from '../../../components/footer/footerStyle'
+import {footerStyle} from '../../components/footer/footerStyle'
 import Link from 'next/link'
 export default function FooterComp() {
   return (

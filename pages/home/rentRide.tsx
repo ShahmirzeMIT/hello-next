@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import {rentRideStyle} from '../../components/pageStyles/rentRideStyle'
-import HomeLayout from '../layout/homeLayout/HomeLayout'
+import HomeLayout from '../../layout/homeLayout/HomeLayout'
 import { Typography } from '@mui/material'
 import DriverInfo from '@/components/reasuable/driverInfo/DriverInfo'
 import InputText from '@/components/reasuable/input/inputText'
